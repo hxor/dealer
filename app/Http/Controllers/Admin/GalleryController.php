@@ -133,8 +133,8 @@ class GalleryController extends Controller
      */
     public function doUploadImage(Request $request, $id){
         $title = $request->file->getClientOriginalName();
-        $path = '/gallery/'.date('mY').'/'.str_slug($request->file->getClientOriginalName(),'-').'.'.$request->file->getClientOriginalExtension();
-        $request->file->move(public_path('gallery/'.date('mY')), $path);
+        $path = '/upload/gallery/'.date('mY').'/'.str_slug($request->file->getClientOriginalName(),'-').'.'.$request->file->getClientOriginalExtension();
+        $request->file->move(public_path('/upload/gallery/'.date('mY')), $path);
 
         Image::create(['gallery_id' => $id, 'title' => $title, 'image' => $path]);
     }

@@ -11,8 +11,8 @@
                   <li class="has_sub">
                       <a href="javascript:void(0);" class="waves-effect"><i class="ti-layout-list-thumb-alt"></i><span> Products </span> <span class="menu-arrow"></span></a>
                       <ul class="list-unstyled">
-                          <li><a href="#"> All Products</a></li>
                           <li><a href="{{ route('admin.category.index') }}"> Categories</a></li>
+                          <li><a href="{{ route('admin.motor.index') }}"> Motor </a></li>
                       </ul>
                   </li>
                   <li><a href="{{ route('admin.gallery.index') }}" class="waves-effect"><i class="ti-gallery"></i><span> Gallery </span></a></li>

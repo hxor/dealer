@@ -38,10 +38,10 @@ return [
 
     // Which folder to store files in project, fill in 'public', 'resources', 'storage' and so on.
     // You should create routes to serve images if it is not set to public.
-    'base_directory' => 'public',
+    'base_directory' => 'public/upload',
 
-    'images_folder_name' => 'photos',
-    'files_folder_name'  => 'files',
+    'images_folder_name' => '../upload/photos',
+    'files_folder_name'  => '../upload/files',
 
     'shared_folder_name' => 'shares',
     'thumb_folder_name'  => 'thumbs',
@@ -72,8 +72,8 @@ return [
     // If true, non-alphanumeric folder name will be rejected.
     'alphanumeric_directory' => false,
 
-    'max_image_size' => 500,
-    'max_file_size' => 1000,
+    'max_image_size' => 5000,
+    'max_file_size' => 10000,
 
     // available since v1.3.0
     'valid_image_mimetypes' => [

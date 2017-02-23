@@ -28,4 +28,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'Adm
 
     // Category
     Route::resource('/category', 'CategoryController', ['names' => 'admin.category']);
+
+    // Motor
+    Route::resource('/motor', 'MotorController', ['names' => 'admin.motor']);
 });
