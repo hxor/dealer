@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Motor;
+use App\Models\Spec;
 use App\Models\Gallery;
 use Yajra\Datatables\Html\Builder;
 use Yajra\Datatables\Datatables;
@@ -136,13 +137,10 @@ class MotorController extends Controller
      */
     public function show($id)
     {
+        $bread = $this->bread;
+        $bread[0] = route('admin.motor.index');
         $motor = Motor::findOrFail($id);
-        $data = [
-            'motor' => $motor,
-            'gallery' => $motor->gallery,
-            'photo' => $motor->gallery->images
-        ];
-        return $data;
+        return view('main.backend.motor.show', compact('bread', 'motor'));
     }
 
     /**
@@ -218,4 +216,57 @@ class MotorController extends Controller
 
         return redirect()->route('admin.motor.index');
     }
+
+    public function getSpecForm($id){
+      $idmotor = $id;
+      $bread = $this->bread;
+      $bread[0] = route('admin.motor.show', $idmotor);
+      return view('main.backend.motor._spec-create', compact('idmotor', 'bread'));
+    }
+
+    public function postSpec(Request $request, $id){
+      Spec::create($request->all());
+      notify()->flash('Done!', 'success', [
+          'timer' => 1500,
+          'text' => 'Spec successfully added',
+      ]);
+      return redirect()->route('admin.motor.show', $id);
+    }
+
+    public function getSpecFormEdit($id, $ids){
+      $motor = Motor::where('id',$id)->select('id')->first();
+      $idmotor = $motor->id;
+      $spec = Spec::findOrFail($ids);
+      // return $idmotor . ' ' . $idspec;
+      $bread = $this->bread;
+      $bread[0] = route('admin.motor.show', $idmotor);
+      return view('main.backend.motor._spec-edit', compact('idmotor', 'spec', 'bread'));
+    }
+
+    public function postSpecUpdate(Request $request, $id, $ids){
+      $motor = Motor::where('id',$id)->select('id')->first();
+      $idmotor = $motor->id;
+      $spec = Spec::findOrFail($ids);
+      // return $request->all();
+      $spec->update($request->all());
+      notify()->flash('Done!', 'success', [
+          'timer' => 1500,
+          'text' => 'Spec successfully updated',
+      ]);
+      return redirect()->route('admin.motor.show', $idmotor);
+    }
+
+    public function destroySpec($id, $ids){
+      $motor = Motor::where('id',$id)->select('id')->first();
+      $idmotor = $motor->id;
+      if (!Spec::destroy($ids)) return redirect()->back();
+
+      notify()->flash('Done!', 'success', [
+          'timer' => 1500,
+          'text' => 'Spec successfully deleted',
+      ]);
+
+      return redirect()->route('admin.motor.show', $idmotor);
+    }
+
 }

@@ -16,7 +16,7 @@ class CategoriesTableSeeder extends Seeder
         $data = [
           ['slug' => 'matic', 'title' => 'Matic'],
           ['slug' => 'cub', 'title' => 'Cub'],
-          ['slug' => 'sport', 'Title' => 'Sport']
+          ['slug' => 'sport', 'title' => 'Sport']
         ];
         DB::table('categories')->insert($data);
     }

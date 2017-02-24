@@ -31,4 +31,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'Adm
 
     // Motor
     Route::resource('/motor', 'MotorController', ['names' => 'admin.motor']);
+    Route::get('/motor/{id}/spec/create', ['as' => 'admin.spec.create', 'uses' => 'MotorController@getSpecForm']);
+    Route::post('/motor/{id}/spec/store', ['as' => 'admin.spec.store', 'uses' => 'MotorController@postSpec']);
+    Route::get('/motor/{id}/spec/{ids}/edit', ['as' => 'admin.spec.edit', 'uses' => 'MotorController@getSpecFormEdit']);
+    Route::put('/motor/{id}/spec/{ids}/update', ['as' => 'admin.spec.update', 'uses' => 'MotorController@postSpecUpdate']);
+    Route::delete('/motor/{id}/spec/{ids}/delete', ['as' => 'admin.spec.delete', 'uses' => 'MotorController@destroySpec']);
 });

@@ -35,6 +35,7 @@ class CreateSpecsTable extends Migration
             $table->string('jarak_roda')->nullable();
             $table->string('jarak_tanah')->nullable();
             $table->string('curb_weight')->nullable();
+            $table->string('tinggi_jok')->nullable();
             $table->string('tipe_rangka')->nullable();
             $table->string('suspensi_depan')->nullable();
             $table->string('suspensi_belakang')->nullable();
@@ -42,6 +43,7 @@ class CreateSpecsTable extends Migration
             $table->string('ban_belakang')->nullable();
             $table->string('rem_depan')->nullable();
             $table->string('rem_belakang')->nullable();
+            $table->string('sistem_pengereman')->nullable();
             $table->string('aki')->nullable();
             $table->string('tipe_pengapian')->nullable();
             $table->string('tipe_busi')->nullable();
