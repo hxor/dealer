@@ -108,8 +108,13 @@ class MotorController extends Controller
             'gallery_id' => 'required'
         ]);
 
+        $slug = str_slug($request->title, '-');
+        if (Motor::where('slug', str_slug($request->title, '-'))->exists()) {
+          $slug = str_slug($request->title . '-' . rand(1,9999), '-');
+        }
+
         $data = [
-            'slug' => str_slug($request->title, '-'),
+            'slug' => $slug,
             'title' => $request->title,
             'year' => $request->year,
             'price' => $request->price,
@@ -177,8 +182,15 @@ class MotorController extends Controller
           'gallery_id' => 'required'
       ]);
 
+
+      if (Motor::where('slug', str_slug($request->title, '-'))->exists()) {
+        $slug = str_slug($request->title . '-' . rand(1,9999), '-');
+      } else {
+        $slug = str_slug($request->title, '-');
+      }
+
       $data = [
-          'slug' => str_slug($request->title, '-'),
+          'slug' => $slug,
           'title' => $request->title,
           'year' => $request->year,
           'price' => $request->price,

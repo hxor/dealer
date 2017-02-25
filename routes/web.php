@@ -11,9 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['as' => 'index', 'uses' => 'HomeController@index']);
+
+Route::get('/motor', ['as' => 'motor', 'uses' => 'HomeController@getMotor']);
+Route::get('/motor/{cat}', ['as' => 'motor.cat', 'uses' => 'HomeController@getMotorCat']);
+Route::get('/motor/{slug}/detail', ['as' => 'motor.detail', 'uses' => 'HomeController@getMotorDetail']);
+
+Route::get('/contact', ['as' => 'contact', 'uses' => 'HomeController@getContact']);
+Route::get('/about-us', ['as' => 'about-us', 'uses' => 'HomeController@getAboutUs']);
 
 Auth::routes();
 
