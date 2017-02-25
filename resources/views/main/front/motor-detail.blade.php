@@ -55,11 +55,15 @@
                       <div class="col-md-4">
                           <div class="sidebar-widget widget">
                               <ul class="list-group">
+                                @if (!$motor->spec == null)
                                   <li class="list-group-item"> <span class="badge">Year</span> {{ $motor->year }}</li>
                                   <li class="list-group-item"> <span class="badge">Model</span> {{ $motor->category->title }}</li>
                                   <li class="list-group-item"> <span class="badge">Transmission</span> {{ $motor->spec->transmisi }}</li>
                                   <li class="list-group-item"> <span class="badge">Power</span> {{ $motor->spec->volume_langkah }}</li>
                                   <li class="list-group-item"> <span class="badge">Fuel type</span> {{ $motor->spec->sistem_bahan_bakar }}</li>
+                                @else
+                                  Maaf, detail produk belum ditambahkan.
+                                @endif
                               </ul>
                           </div>
                           <div class="sidebar-widget widget calculator-widget">
@@ -78,7 +82,7 @@
                                       </div>
                                   </div>
                                   <div class="calculations-result">
-                                    <span class="meta-data">Biaya angsuran yang di kenakan</span>
+                                    <span class="meta-data">Biaya angsuran yang dibutuhkan</span>
                                       <span class="loan-amount" id="test"></span>
                                   </div>
                               </form>
@@ -98,6 +102,7 @@
                                       <p>{!! $motor->desc !!}</p>
                                   </div>
                                   <div id="vehicle-specs" class="tab-pane fade">
+                                    @if (!$motor->spec == null)
                                       <div class="accordion" id="toggleArea">
                                           <div class="accordion-group panel">
                                             <div class="accordion-heading togglize"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#" href="#collapseOne"> Mesin <i class="fa fa-plus-circle"></i> <i class="fa fa-minus-circle"></i> </a> </div>
@@ -263,6 +268,10 @@
                                                   </div>
                                             </div>
                                           </div>
+                                    @else
+                                      Maaf, detail produk belum ditambahkan.
+                                    @endif
+
                                     </div>
                                       <!-- End Toggle -->
                                   </div>
