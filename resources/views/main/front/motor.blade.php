@@ -52,13 +52,19 @@
                                         <h4 class="result-item-title"><a href="{{ route('motor.detail', $motor->slug) }}">{{ $motor->title }}</a></h4>
                                       <div class="result-item-cont">
                                               <div class="result-item-block col1">
-                                                <ul class="inline">
-                                                    <li>{{ $motor->spec->tipe_mesin }}</li>
-                                                    <li>{{ $motor->spec->sistem_bahan_bakar }}</li>
-                                                    <li>{{ $motor->spec->tipe_pengapian }}</li>
-                                                    <li>{{ $motor->spec->kapasitas_bahan_bakar }}</li>
-                                                    <li>{{ $motor->spec->transmisi }}</li>
-                                                </ul>
+                                                @if (!$motor->spec == null)
+                                                  <ul class="inline">
+                                                      <li>{{ $motor->spec->tipe_mesin }}</li>
+                                                      <li>{{ $motor->spec->sistem_bahan_bakar }}</li>
+                                                      <li>{{ $motor->spec->tipe_pengapian }}</li>
+                                                      <li>{{ $motor->spec->kapasitas_bahan_bakar }}</li>
+                                                      <li>{{ $motor->spec->transmisi }}</li>
+                                                  </ul>
+                                                @else
+                                                  <ul class="inline">
+                                                      <li>Maaf, belum ada detail spesifikasi</li>
+                                                  </ul>
+                                                @endif
                                               </div>
                                               <div class="result-item-block col2">
                                                   <div class="result-item-pricing">
