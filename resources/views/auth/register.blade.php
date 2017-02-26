@@ -8,7 +8,7 @@
 
 		<link rel="shortcut icon" href="{{ asset('back/images/favicon_1.ico') }}">
 
-		<title>Register | LunaCMS</title>
+		<title>Register | CV. Naga Mas Motor</title>
 
 		<link href="{{ asset('back/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('back/css/core.css') }}" rel="stylesheet" type="text/css" />
@@ -34,7 +34,7 @@
 		<div class="wrapper-page">
 			<div class=" card-box">
 				<div class="panel-heading">
-					<h3 class="text-center"> Sign Up to <strong class="text-custom">LunaCMS</strong> </h3>
+					<h3 class="text-center"> Sign Up </h3>
 				</div>
 
 				<div class="panel-body">

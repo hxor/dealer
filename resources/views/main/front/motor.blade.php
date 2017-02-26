@@ -8,6 +8,20 @@
       </div>
   </div>
   <!-- Utiity Bar -->
+    <div class="utility-bar">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8 col-sm-6 col-xs-8">
+                    <ol class="breadcrumb">
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li class="active">Motor</li>
+                    </ol>
+              </div>
+                <div class="col-md-4 col-sm-6 col-xs-4">
+                </div>
+            </div>
+        </div>
+    </div>
   <div class="main" role="main">
     <div id="content" class="content full">
         <div class="container">

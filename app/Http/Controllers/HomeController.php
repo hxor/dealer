@@ -34,19 +34,19 @@ class HomeController extends Controller
     }
 
     public function getMotor(){
-      $motors = Motor::paginate(4);
+      $motors = Motor::orderBy('id', 'desc')->paginate(4);
       return view('main.front.motor', compact('motors'));
     }
 
     public function getMotorCat($slug){
       $category = Category::where('slug', $slug)->first();
-      $motors = Motor::where('category_id', $category->id)->paginate(4);
+      $motors = Motor::where('category_id', $category->id)->orderBy('id', 'desc')->paginate(4);
       return view('main.front.motor', compact('motors'));
     }
 
     public function getMotorDetail($slug){
       $motor = Motor::where('slug', $slug)->first();
-      $related = Motor::where('category_id', $motor->category_id)->get();
+      $related = Motor::where('category_id', $motor->category_id)->orderBy('id', 'desc')->get();
       return view('main.front.motor-detail', compact('motor', 'related'));
     }
 

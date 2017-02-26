@@ -4,7 +4,7 @@
   <!-- Basic Page Needs
     ================================================== -->
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Naga Mas Motor | Dealer Motor Honda</title>
+  <title>CV. Naga Mas Motor | Dealer Motor Honda</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="author" content="">

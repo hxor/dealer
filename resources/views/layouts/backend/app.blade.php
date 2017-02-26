@@ -11,7 +11,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'LunaCMS') }}</title>
+    <title>{{ config('app.name', 'CV. Naga Mas Motor') }}</title>
 
 
 				<link href="{{ asset('back/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />

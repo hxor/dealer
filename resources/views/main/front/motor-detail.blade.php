@@ -9,6 +9,23 @@
   </div>
   <!-- Utiity Bar -->
 
+  <!-- Utiity Bar -->
+    <div class="utility-bar">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8 col-sm-6 col-xs-8">
+                    <ol class="breadcrumb">
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ url('/motor') }}">Motor</a></li>
+                        <li class="active">Detail</li>
+                    </ol>
+              </div>
+                <div class="col-md-4 col-sm-6 col-xs-4">
+                </div>
+            </div>
+        </div>
+    </div>
+
   <!-- Start Body Content -->
   <div class="main" role="main">
     <div id="content" class="content full">

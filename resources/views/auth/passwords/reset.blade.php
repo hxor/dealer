@@ -8,7 +8,7 @@
 
 		<link rel="shortcut icon" href="{{ asset('back/images/favicon_1.ico') }}">
 
-		<title>Reset Password | LunaCMS</title>
+		<title>Reset Password | CV. Naga Mas Motor</title>
 
 		<link href="{{ asset('back/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('back/css/core.css') }}" rel="stylesheet" type="text/css" />
@@ -91,7 +91,7 @@
 
 				</div>
 			</div>
-      
+
 		</div>
 
 		<script>

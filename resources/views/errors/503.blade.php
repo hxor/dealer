@@ -38,7 +38,7 @@
                 <h2>This site is getting a tune-up.</h2><br>
                 <p class="text-muted">Why don't you come back in a little while and see if our expert are finished tinkering.</p>
                 <br>
-                <a class="btn btn-default waves-effect waves-light" href="index.html"> Return Home</a>
+                <a class="btn btn-default waves-effect waves-light" href="{{ url('/') }}"> Return Home</a>
 
             </div>
         </div>

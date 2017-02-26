@@ -20,7 +20,19 @@ Route::get('/motor/{slug}/detail', ['as' => 'motor.detail', 'uses' => 'HomeContr
 Route::get('/contact', ['as' => 'contact', 'uses' => 'HomeController@getContact']);
 Route::get('/about-us', ['as' => 'about-us', 'uses' => 'HomeController@getAboutUs']);
 
-Auth::routes();
+// Auth::routes();
+// Authentication Routes...
+Route::get('login', 'Auth\LoginController@showLoginForm');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout');
+// Registration Routes...
+// Route::get('register', 'Auth\RegisterController@showRegistrationForm');
+// Route::post('register', 'Auth\RegisterController@register');
+// Password Reset Routes...
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'Admin'], function(){
     Route::get('/', ['as' => 'admin', 'uses' => 'AdminController@index']);
